@@ -1,0 +1,50 @@
+﻿@page
+@model CNews.Pages.Articles.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Article</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Article.Title)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Article.Title)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Article.Content)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Article.Content)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Article.Author)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Article.Author.Id)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Article.Editor)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Article.Editor.Id)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Article.Designer)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Article.Designer.Id)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Article.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>
