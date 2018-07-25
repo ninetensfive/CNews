@@ -10,11 +10,11 @@ using CNews.Models;
 
 namespace CNews.Pages.Articles
 {
-    public class IndexModel : PageModel
+    public class UnpublishedModel : PageModel
     {
         private readonly CNews.Data.ApplicationDbContext _context;
 
-        public IndexModel(CNews.Data.ApplicationDbContext context)
+        public UnpublishedModel(CNews.Data.ApplicationDbContext context)
         {
             _context = context;
         }
@@ -24,7 +24,7 @@ namespace CNews.Pages.Articles
         public async Task OnGetAsync()
         {
             Article = await _context.Articles     
-                .Where(a => a.DesignerId != null && a.EditorId != null)
+                .Where(a => a.DesignerId == null || a.EditorId == null)
                 .Include(a => a.Author)
                 .Include(a => a.Designer)
                 .Include(a => a.Editor).ToListAsync();

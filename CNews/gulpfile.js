@@ -27,6 +27,12 @@ var deps = {
     },
     "@aspnet": {
         "signalr/dist/browser/*": ""
+    },
+    "font-awesome/css": {
+        "/*": ""
+    },
+    "font-awesome/fonts": {
+        "/*": ""
     }
 };
 
